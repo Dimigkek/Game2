@@ -17,7 +17,7 @@ while again != "no" or again != "No" :
                 y = 1
                 break
             if guessed_number < hidden:
-                print("The number we are looking for is bigger than yous")
+                print("The number we are looking for is bigger than yours")
                 guessed_number = int(input("Try again \n"))
             elif guessed_number > hidden:
                 print("The number we are looking for is smaller than yours")
@@ -28,7 +28,7 @@ while again != "no" or again != "No" :
                 y = 1
                 break
             if guessed_number < hidden:
-                print("The number we are looking for is bigger than yous")
+                print("The number we are looking for is bigger than yours")
                 guessed_number = int(input("Try again \n"))
             elif guessed_number > hidden:
                 print("The number we are looking for is smaller than yours")
@@ -39,7 +39,7 @@ while again != "no" or again != "No" :
                     y = 1
                     break
                 if guessed_number < hidden:
-                    print("The number we are looking for is bigger than yous")
+                    print("The number we are looking for is bigger than yours")
                     guessed_number = int(input("Try again \n"))
                 elif guessed_number > hidden:
                     print("The number we are looking for is smaller than yours")
@@ -58,4 +58,5 @@ while again != "no" or again != "No" :
         again = input("Please choose between Yes or No \n")
 
     if again == "No" or again == "no":
+        print"Good Bye! ♥"
         break
