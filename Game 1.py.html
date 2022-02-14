@@ -1,80 +1,61 @@
-<html>
-<head>
-<title>Game 1.py</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<style type="text/css">
-.s0 { color: #cc7832;}
-.s1 { color: #a9b7c6;}
-.s2 { color: #6a8759;}
-.s3 { color: #6897bb;}
-</style>
-</head>
-<body bgcolor="#2b2b2b">
-<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
-<tr><td><center>
-<font face="Arial, Helvetica" color="#000000">
-Game 1.py</font>
-</center></td></tr></table>
-<pre><span class="s0">import </span><span class="s1">random</span>
-<span class="s1">again = </span><span class="s2">&quot;Yes&quot;</span>
-<span class="s0">while </span><span class="s1">again != </span><span class="s2">&quot;no&quot; </span><span class="s0">or </span><span class="s1">again != </span><span class="s2">&quot;No&quot; </span><span class="s1">:</span>
-    <span class="s1">count = </span><span class="s3">0</span>
-    <span class="s1">hidden = int(random.randrange(</span><span class="s3">1</span><span class="s0">, </span><span class="s3">100</span><span class="s0">, </span><span class="s3">1</span><span class="s1">))</span>
+import random
+again = "Yes"
+while again != "no" or again != "No" :
+    count = 0
+    hidden = int(random.randrange(1, 100, 1))
 
-    <span class="s1">difficulty = input(</span><span class="s2">&quot;Choose a difficulty level (Easy , Normal and Hard) : &quot;</span><span class="s1">)</span>
-    <span class="s0">while </span><span class="s1">difficulty != </span><span class="s2">&quot;Easy&quot; </span><span class="s0">and </span><span class="s1">difficulty != </span><span class="s2">&quot;Normal&quot; </span><span class="s0">and </span><span class="s1">difficulty != </span><span class="s2">&quot;Hard&quot; </span><span class="s0">and </span><span class="s1">difficulty != </span><span class="s2">&quot;easy&quot; </span><span class="s0">and </span><span class="s1">difficulty != </span><span class="s2">&quot;normal&quot; </span><span class="s0">and </span><span class="s1">difficulty != </span><span class="s2">&quot;hard&quot;</span><span class="s1">:</span>
-        <span class="s1">print(</span><span class="s2">&quot;Choose between Easy , Normal and Hard&quot;</span><span class="s1">)</span>
-        <span class="s1">difficulty = input(</span><span class="s2">&quot;Choose a difficulty level : &quot;</span><span class="s1">)</span>
-    <span class="s1">guessed_number = int(input(</span><span class="s2">&quot;Guess the number between 1 and 100 : &quot;</span><span class="s1">))</span>
-    <span class="s1">y = </span><span class="s3">0</span>
-    <span class="s0">while </span><span class="s1">hidden != guessed_number:</span>
-        <span class="s0">if </span><span class="s1">difficulty == </span><span class="s2">&quot;Easy&quot; </span><span class="s0">or </span><span class="s1">difficulty == </span><span class="s2">&quot;easy&quot;</span><span class="s1">:</span>
-            <span class="s1">count += </span><span class="s3">1</span>
-            <span class="s0">if </span><span class="s1">count == </span><span class="s3">10</span><span class="s1">:</span>
-                <span class="s1">y = </span><span class="s3">1</span>
-                <span class="s0">break</span>
-            <span class="s0">if </span><span class="s1">guessed_number &lt; hidden:</span>
-                <span class="s1">print(</span><span class="s2">&quot;The number we are looking for is bigger than yous&quot;</span><span class="s1">)</span>
-                <span class="s1">guessed_number = int(input(</span><span class="s2">&quot;Try again </span><span class="s0">\n</span><span class="s2">&quot;</span><span class="s1">))</span>
-            <span class="s0">elif </span><span class="s1">guessed_number &gt; hidden:</span>
-                <span class="s1">print(</span><span class="s2">&quot;The number we are looking for is smaller than yours&quot;</span><span class="s1">)</span>
-                <span class="s1">guessed_number = int(input(</span><span class="s2">&quot;Try again </span><span class="s0">\n</span><span class="s2">&quot;</span><span class="s1">))</span>
-        <span class="s0">elif </span><span class="s1">difficulty == </span><span class="s2">&quot;Normal&quot; </span><span class="s0">or </span><span class="s1">difficulty == </span><span class="s2">&quot;normal&quot;</span><span class="s1">:</span>
-            <span class="s1">count += </span><span class="s3">1</span>
-            <span class="s0">if </span><span class="s1">count == </span><span class="s3">5</span><span class="s1">:</span>
-                <span class="s1">y = </span><span class="s3">1</span>
-                <span class="s0">break</span>
-            <span class="s0">if </span><span class="s1">guessed_number &lt; hidden:</span>
-                <span class="s1">print(</span><span class="s2">&quot;The number we are looking for is bigger than yous&quot;</span><span class="s1">)</span>
-                <span class="s1">guessed_number = int(input(</span><span class="s2">&quot;Try again </span><span class="s0">\n</span><span class="s2">&quot;</span><span class="s1">))</span>
-            <span class="s0">elif </span><span class="s1">guessed_number &gt; hidden:</span>
-                <span class="s1">print(</span><span class="s2">&quot;The number we are looking for is smaller than yours&quot;</span><span class="s1">)</span>
-                <span class="s1">guessed_number = int(input(</span><span class="s2">&quot;Try again </span><span class="s0">\n</span><span class="s2">&quot;</span><span class="s1">))</span>
-        <span class="s0">elif </span><span class="s1">difficulty == </span><span class="s2">&quot;Hard&quot; </span><span class="s0">or </span><span class="s1">difficulty == </span><span class="s2">&quot;hard&quot;</span><span class="s1">:</span>
-                <span class="s1">count += </span><span class="s3">1</span>
-                <span class="s0">if </span><span class="s1">count == </span><span class="s3">3</span><span class="s1">:</span>
-                    <span class="s1">y = </span><span class="s3">1</span>
-                    <span class="s0">break</span>
-                <span class="s0">if </span><span class="s1">guessed_number &lt; hidden:</span>
-                    <span class="s1">print(</span><span class="s2">&quot;The number we are looking for is bigger than yous&quot;</span><span class="s1">)</span>
-                    <span class="s1">guessed_number = int(input(</span><span class="s2">&quot;Try again </span><span class="s0">\n</span><span class="s2">&quot;</span><span class="s1">))</span>
-                <span class="s0">elif </span><span class="s1">guessed_number &gt; hidden:</span>
-                    <span class="s1">print(</span><span class="s2">&quot;The number we are looking for is smaller than yours&quot;</span><span class="s1">)</span>
-                    <span class="s1">guessed_number = int(input(</span><span class="s2">&quot;Try again </span><span class="s0">\n</span><span class="s2">&quot;</span><span class="s1">))</span>
+    difficulty = input("Choose a difficulty level (Easy , Normal and Hard) : ")
+    while difficulty != "Easy" and difficulty != "Normal" and difficulty != "Hard" and difficulty != "easy" and difficulty != "normal" and difficulty != "hard":
+        print("Choose between Easy , Normal and Hard")
+        difficulty = input("Choose a difficulty level : ")
+    guessed_number = int(input("Guess the number between 1 and 100 : "))
+    y = 0
+    while hidden != guessed_number:
+        if difficulty == "Easy" or difficulty == "easy":
+            count += 1
+            if count == 10:
+                y = 1
+                break
+            if guessed_number < hidden:
+                print("The number we are looking for is bigger than yous")
+                guessed_number = int(input("Try again \n"))
+            elif guessed_number > hidden:
+                print("The number we are looking for is smaller than yours")
+                guessed_number = int(input("Try again \n"))
+        elif difficulty == "Normal" or difficulty == "normal":
+            count += 1
+            if count == 5:
+                y = 1
+                break
+            if guessed_number < hidden:
+                print("The number we are looking for is bigger than yous")
+                guessed_number = int(input("Try again \n"))
+            elif guessed_number > hidden:
+                print("The number we are looking for is smaller than yours")
+                guessed_number = int(input("Try again \n"))
+        elif difficulty == "Hard" or difficulty == "hard":
+                count += 1
+                if count == 3:
+                    y = 1
+                    break
+                if guessed_number < hidden:
+                    print("The number we are looking for is bigger than yous")
+                    guessed_number = int(input("Try again \n"))
+                elif guessed_number > hidden:
+                    print("The number we are looking for is smaller than yours")
+                    guessed_number = int(input("Try again \n"))
 
-    <span class="s0">if </span><span class="s1">y == </span><span class="s3">0</span><span class="s1">:</span>
-        <span class="s1">print(</span><span class="s2">&quot;You Won!&quot;</span><span class="s1">)</span>
-        <span class="s1">print(</span><span class="s2">&quot;Times you guessed : &quot; </span><span class="s1">+ str(count))</span>
-    <span class="s0">else</span><span class="s1">:</span>
-        <span class="s1">print(</span><span class="s2">&quot;You Lose!&quot;</span><span class="s1">)</span>
-        <span class="s1">print(</span><span class="s2">&quot;The number was : &quot; </span><span class="s1">+ str(hidden))</span>
-        <span class="s1">print(</span><span class="s2">&quot;Times you guessed : &quot; </span><span class="s1">+ str(count))</span>
+    if y == 0:
+        print("You Won!")
+        print("Times you guessed : " + str(count))
+    else:
+        print("You Lose!")
+        print("The number was : " + str(hidden))
+        print("Times you guessed : " + str(count))
 
-    <span class="s1">again = input(</span><span class="s2">&quot;Wanna play again? </span><span class="s0">\n</span><span class="s2">&quot;</span><span class="s1">)</span>
-    <span class="s0">while </span><span class="s1">again != </span><span class="s2">&quot;Yes&quot; </span><span class="s0">and </span><span class="s1">again != </span><span class="s2">&quot;No&quot; </span><span class="s0">and </span><span class="s1">again != </span><span class="s2">&quot;yes&quot; </span><span class="s0">and </span><span class="s1">again != </span><span class="s2">&quot;no&quot;</span><span class="s1">:</span>
-        <span class="s1">again = input(</span><span class="s2">&quot;Please choose between Yes or No </span><span class="s0">\n</span><span class="s2">&quot;</span><span class="s1">)</span>
+    again = input("Wanna play again? \n")
+    while again != "Yes" and again != "No" and again != "yes" and again != "no":
+        again = input("Please choose between Yes or No \n")
 
-    <span class="s0">if </span><span class="s1">again == </span><span class="s2">&quot;No&quot; </span><span class="s0">or </span><span class="s1">again == </span><span class="s2">&quot;no&quot;</span><span class="s1">:</span>
-        <span class="s0">break</span></pre>
-</body>
-</html>
+    if again == "No" or again == "no":
+        break
